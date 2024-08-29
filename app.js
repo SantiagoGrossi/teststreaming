@@ -20,7 +20,7 @@ const app = express();
 app.use(express.static('/home/testrtsp'));
 app.use('/testrtsp', express.static('/home/sgrossi/testrtsp'));
 app.get('/start-ffmpeg', (req, res) => {
-  const ffmpegCommand = `ffmpeg -i "rtsp://admin:12publico34@190.191.127.103:554/cam/realmonitor?channel=1&subtype=0" -c:v copy -c:a aac -f hls -hls_time 10 -hls_list_size 4 -hls_flags delete_segments -reset_timestamps 1 "/home/sgrossi/testrtsp/output.m3u8"`;
+  const ffmpegCommand = `ffmpeg -i "rtsp://admin:12publico34@elpinarfutbol.ddns.net:555/cam/realmonitor?channel=1&subtype=0" -c:v copy -c:a aac -f hls -hls_time 10 -hls_list_size 4 -hls_flags delete_segments -reset_timestamps 1 "/home/sgrossi/testrtsp/output.m3u8"`;
 
     exec(ffmpegCommand, (error, stdout, stderr) => {
         if (error) {
